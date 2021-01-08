@@ -28,15 +28,15 @@ for i = 1:m
     error_train(i) = linearRegCostFunction(Xtrain, ytrain, theta, 0);
     error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
 end    
-% 
-% for i = 1:50
-%     rng = round(rand*size(X,1));
-%     Xtrain = X(1:rng,:);
-%     ytrain = y(1:rng,:);
-%     theta = trainLinearReg(Xtrain, ytrain, lambda);
-%     error_train(i) = linearRegCostFunction(Xtrain, ytrain, theta, 0);
-%     error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
-% end    
+
+for i = 1:50
+    rng = round(rand*size(X,1));
+    Xtrain = X(rng);
+    ytrain = y(rng);
+    theta = trainLinearReg(Xtrain, ytrain, lambda);
+    error_train(i) = linearRegCostFunction(Xtrain, ytrain, theta, 0);
+    error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
+end    
 % ====================== YOUR CODE HERE ======================
 % Instructions: Fill in this function to return training errors in 
 %               error_train and the cross validation errors in error_val. 
