@@ -44,9 +44,7 @@ while (pre_M ~= M)
     M1_history = [M1_history; M(1,:)];
     M2_history = [M2_history; M(2,:)];
     
-    M
-    
-    
+    M;
     
 end
 
@@ -114,7 +112,6 @@ while (pre_M ~= M)
     for i = [1:c]
         this_cluster = (cluster==i);
         M(i, :) = sum(X(this_cluster, :)) / sum(this_cluster);
-
     end
 XX = zeros(size(X));
 for i = [1:c]
